@@ -1,0 +1,19 @@
+vector<int> Solution::findPerm(const string A, int B) {
+    int s = 1; // start from lowest no
+    int l = B; // end is no given
+    vector <int> ans;
+    for(int i = 0 ; i <= A.size();i++)
+    {
+        //IF get I push smallest number and increment the count for s
+        if(A[i]=='I'){
+            ans.push_back(s);
+            s++;
+        }
+        // IF get D push largest number and decrement the l;
+        else {
+            ans.push_back(l);
+            l--;
+        }
+    }
+    return ans;
+}
